@@ -1,0 +1,549 @@
+{
+	"info": {
+		"_postman_id": "c07d86d0-f017-49e4-b44a-8e7ee986f996",
+		"name": "Sails_Queue",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25993381"
+	},
+	"item": [
+		{
+			"name": "Place",
+			"item": [
+				{
+					"name": "Add Place",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "place",
+									"value": "rajasthan",
+									"type": "text"
+								},
+								{
+									"key": "unprocessTicket",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "prefix",
+									"value": "RJ",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/admin/place",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"admin",
+								"place"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Place",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "place",
+									"value": "himmatngar",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "unprocessTicket",
+									"value": "3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/place/update/64115a093a560916015d721f",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"place",
+								"update",
+								"64115a093a560916015d721f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Places",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/place/get",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"place",
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Place",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/place/delete/640ac42470c18e23ce320513",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"place",
+								"delete",
+								"640ac42470c18e23ce320513"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TICKETS",
+			"item": [
+				{
+					"name": "add ticket",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "vandana",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "placeId",
+									"value": "640ac42470c18e23ce320513",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "ticketNo",
+									"value": "8",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "processed",
+									"value": "false",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/addticket/640ac42470c18e23ce320513",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"addticket",
+								"640ac42470c18e23ce320513"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Find",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "processed",
+									"value": "false",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/user/ticket?processed=true",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"user",
+								"ticket"
+							],
+							"query": [
+								{
+									"key": "processed",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "User Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "avani",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "avani@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "avani@1604",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "a",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/user/signup",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"user",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "avani@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "avani@1604",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/user/login",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "640b14a2fd36be8054fa2692\n",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "khushal@gmail.com",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/user/logout",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"user",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Update Ticket(Admin)",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "processed",
+									"value": "true",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/ticket/64114fc5e4745c071efa2109",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"ticket",
+								"64114fc5e4745c071efa2109"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Tickets",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/admin/ticket?processed=true",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"admin",
+								"ticket"
+							],
+							"query": [
+								{
+									"key": "processed",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Place",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/admin/place/640ac42470c18e23ce320513",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"admin",
+								"place",
+								"640ac42470c18e23ce320513"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Tickets",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "place",
+									"value": "himmatngar",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/ticket/show",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"ticket",
+								"show"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "server",
+			"value": "http://localhost:1337",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQHppZ251dHMuY29tIiwiaWQiOiI2NDE4MzJhOGM5ZDI2MWIyNzNkZmYzZDYiLCJpYXQiOjE2Nzk1NTMxNDMsImV4cCI6MTY3OTU4MTk0M30.WscUN9TTHZtgLVeCH4mH_lrJQfdHZErN6MmVdmWudPM",
+			"type": "string"
+		}
+	]
+}

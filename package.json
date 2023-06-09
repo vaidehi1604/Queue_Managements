@@ -1,0 +1,40 @@
+{
+  "name": "queue-management",
+  "private": true,
+  "version": "0.0.0",
+  "description": "a Sails application",
+  "keywords": [],
+  "dependencies": {
+    "@sailshq/lodash": "^3.10.3",
+    "bcrypt": "^5.1.0",
+    "dotenv": "^16.0.3",
+    "jsonwebtoken": "^9.0.0",
+    "nodemon": "^2.0.21",
+    "sails": "^1.5.4",
+    "sails-hook-orm": "^4.0.0",
+    "sails-hook-sockets": "^2.0.0",
+    "sails-mongo": "^2.0.0",
+    "supertest": "^6.3.3"
+  },
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "eslint": "5.16.0",
+    "mocha": "^10.2.0"
+  },
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "node ./node_modules/mocha/bin/mocha test/lifecycle.test.js test/integration/controller/TicketsControler.test.js",
+    "lint": "./node_modules/eslint/bin/eslint.js . --max-warnings=0 --report-unused-disable-directives && echo '✔  Your .js files look good.'",
+    "custom-tests": "echo \"(No other custom tests yet.)\" && echo"
+  },
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ztlab123/queue-management.git"
+  },
+  "author": "ztlab123",
+  "license": "",
+  "engines": {
+    "node": "^18.13"
+  }
+}
